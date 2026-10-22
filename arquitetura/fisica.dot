@@ -1,0 +1,25 @@
+graph F {graph [bgcolor="white",ranksep=0.8,pad=0.3]; node [shape=box,style="rounded,filled",fontname=Arial,fillcolor="#f6f4f8",color="#ca2860"]; edge [fontname=Arial,color="#4381bc"]; "MPLS
+link dedicado" [fillcolor="#dfebfc"]; "Internet
+contingência" [fillcolor="#dcf6e9"]; "Matriz
+ERP + usuários"; "Loja 1
+caixas + Wi-Fi + IoT"; "Loja 2
+caixas + Wi-Fi + IoT"; "Nuvem
+aplicação privada"; {rank=same; "MPLS
+link dedicado"; "Internet
+contingência"}; "MPLS
+link dedicado" -- "Matriz
+ERP + usuários"; "MPLS
+link dedicado" -- "Loja 1
+caixas + Wi-Fi + IoT"; "MPLS
+link dedicado" -- "Loja 2
+caixas + Wi-Fi + IoT"; "MPLS
+link dedicado" -- "Nuvem
+aplicação privada"; edge [style=dashed,color="#2e9865"]; "Internet
+contingência" -- "Matriz
+ERP + usuários"; "Internet
+contingência" -- "Loja 1
+caixas + Wi-Fi + IoT"; "Internet
+contingência" -- "Loja 2
+caixas + Wi-Fi + IoT"; "Internet
+contingência" -- "Nuvem
+aplicação privada";}

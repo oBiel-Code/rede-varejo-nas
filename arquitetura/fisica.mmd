@@ -1,0 +1,13 @@
+flowchart TB
+  MPLS[Provedor MPLS] --- M[Matriz]
+  MPLS --- L1[Loja 1]
+  MPLS --- L2[Loja 2]
+  MPLS --- N[Nuvem]
+  INET[Provedor Internet] --- M
+  INET --- L1
+  INET --- L2
+  INET --- N
+  M --- ERP[ERP e usuarios]
+  L1 --- C1[Caixas, clientes e IoT]
+  L2 --- C2[Caixas, clientes e IoT]
+  N --- APP[Aplicacao privada]

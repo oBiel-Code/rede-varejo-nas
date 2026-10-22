@@ -1,0 +1,2 @@
+OK  13 segmentos em 4 agregados, sem sobreposição
+    endereços nos segmentos: 1984; reservados nos agregados: 2560 (78% em uso)

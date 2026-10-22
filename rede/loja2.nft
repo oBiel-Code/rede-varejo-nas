@@ -1,0 +1,10 @@
+flush ruleset
+table inet loja2 {
+ chain forward {
+  type filter hook forward priority 0; policy drop;
+  ct state established,related accept
+  # O enunciado simula apenas o segmento de caixas da loja 2
+  iifname "eth3" ip daddr 10.20.2.0/25 tcp dport 443 accept
+  iifname "eth3" ip daddr 10.20.2.0/25 ip protocol icmp icmp type echo-request accept
+ }
+}

@@ -1,0 +1,28 @@
+caixa:
+  preferido: mpls
+  reserva: internet
+  troca_se: {latencia_ms: 100, perda_pct: 1}
+  motivo: pagamentos exigem estabilidade
+
+erp:
+  preferido: mpls
+  reserva: internet
+  troca_se: {latencia_ms: 100, perda_pct: 1}
+  motivo: acesso corporativo essencial
+
+video:
+  preferido: mpls
+  reserva: internet
+  troca_se: {latencia_ms: 150, perda_pct: 2}
+  motivo: evitar travamentos na transmissao
+
+backup:
+  preferido: internet
+  reserva: mpls
+  troca_se: {latencia_ms: 300, perda_pct: 5}
+  motivo: preservar a capacidade do enlace dedicado
+
+convidados:
+  preferido: internet-local
+  reserva: nenhum
+  motivo: clientes nao devem acessar a rede corporativa

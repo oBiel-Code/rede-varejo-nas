@@ -1,0 +1,11 @@
+flowchart LR
+  M["Matriz 10.20.0.0/22"]
+  L1["Loja 1 10.20.4.0/23"]
+  L2["Loja 2 10.20.6.0/23"]
+  N["Nuvem 10.20.8.0/23"]
+  L1 -->|"MPLS custo 10 / Internet custo 100"| M
+  L2 -->|"MPLS custo 10 / Internet custo 100"| M
+  M -->|"MPLS ou reserva"| N
+  G["Convidados 10.20.4.0/24"] -->|"NAT, somente internet"| I[Internet]
+  G -.->|"BLOQUEADO"| M
+  N -->|"SNAT da privada"| I

@@ -1,0 +1,14 @@
+flush ruleset
+table inet nuvem {
+ chain forward {
+  type filter hook forward priority 0; policy accept;
+  ct state established,related accept
+  # trafego novo vindo de sites externos nao chega a rede privada
+  iifname "eth2" ip saddr != 10.20.0.0/16 ip daddr 10.20.8.0/24 drop
+ }
+ chain postrouting {
+  type nat hook postrouting priority 100;
+  # SNAT somente para destinos externos e pela interface de internet
+  oifname "eth2" ip saddr 10.20.8.0/24 ip daddr != 10.20.0.0/16 masquerade
+ }
+}

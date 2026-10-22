@@ -1,0 +1,13 @@
+digraph L {graph [bgcolor="white",ranksep=0.6,pad=0.3]; node [shape=box,style="rounded,filled",fontname=Arial,fillcolor="#f5f4f7",color="#ca2860"]; edge [fontname=Arial,color="#367ab9",fontsize=11]; "Loja 1
+10.20.4.0/23" -> "Matriz
+10.20.0.0/22" [label="MPLS 10
+Internet 100"]; "Loja 2
+10.20.6.0/23" -> "Matriz
+10.20.0.0/22" [label="MPLS 10
+Internet 100"]; "Matriz
+10.20.0.0/22" -> "Nuvem
+10.20.8.0/23" [label="MPLS / reserva"]; "Convidados
+10.20.4.0/24" -> "Internet" [label="NAT",color="#299965"]; "Convidados
+10.20.4.0/24" -> "Matriz
+10.20.0.0/22" [label="BLOQUEADO",color="#c22532",style=dashed]; "Nuvem
+10.20.8.0/23" -> "Internet" [label="SNAT da privada",color="#299965"];}
