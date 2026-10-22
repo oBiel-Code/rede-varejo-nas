@@ -1,0 +1,260 @@
+Início: 2026-10-22T23:51:57+00:00
+
+===== Validador da missão 1 =====
+OK  13 segmentos em 4 agregados, sem sobreposição
+    endereços nos segmentos: 1984; reservados nos agregados: 2560 (78% em uso)
+
+===== Docker =====
+Client:
+ Version:    26.1.5-1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.23.0
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  2.35.1-1
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+
+Server:
+ Containers: 14
+  Running: 14
+  Paused: 0
+  Stopped: 0
+ Images: 2
+ Server Version: 26.1.5-1
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: false
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 05044ec0a9a75232cad458027ca83437aae3f4da
+ runc version: bc20cb4497af9af01bea4a8044f1678ffca2745c
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.8.0-1064-azure
+ Operating System: Debian GNU/Linux 12 (bookworm) (containerized)
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 7.756GiB
+ Name: codespaces-71809d
+ ID: 735a243f-7d2b-46fb-aa94-782b58c3ffc8
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Username: codespacesdev
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+OK: topologia já implantada; reutilizando containers existentes
+
+===== 14 nós da topologia =====
+23:51:57 INFO Parsing & checking topology file=rede.clab.yml
+[1m╭[0m[1m────────────────────[0m[1m┬[0m[1m────────────────────────────────[0m[1m┬[0m[1m───────────[0m[1m┬[0m[1m───────────────────[0m[1m╮[0m
+[1m│[0m[1m        Name        [0m[1m│[0m[1m           Kind/Image           [0m[1m│[0m[1m   State   [0m[1m│[0m[1m   IPv4/6 Address  [0m[1m│[0m
+[1m├[0m[1m────────────────────[0m[1m┼[0m[1m────────────────────────────────[0m[1m┼[0m[1m───────────[0m[1m┼[0m[1m───────────────────[0m[1m┤[0m
+│ clab-rede-app      │ linux                          │ running   │ 172.20.20.2       │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::2 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-caixa1   │ linux                          │ running   │ 172.20.20.14      │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::e │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-caixa2   │ linux                          │ running   │ 172.20.20.15      │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::f │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-conv1    │ linux                          │ running   │ 172.20.20.13      │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::d │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-erp      │ linux                          │ running   │ 172.20.20.11      │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::b │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-inet     │ linux                          │ running   │ 172.20.20.7       │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::7 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-internet │ linux                          │ running   │ 172.20.20.3       │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::3 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-iot1     │ linux                          │ running   │ 172.20.20.5       │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::5 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-loja1    │ linux                          │ running   │ 172.20.20.8       │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::8 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-loja2    │ linux                          │ running   │ 172.20.20.9       │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::9 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-matriz   │ linux                          │ running   │ 172.20.20.10      │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::a │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-mpls     │ linux                          │ running   │ 172.20.20.6       │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::6 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-nuvem    │ linux                          │ running   │ 172.20.20.4       │
+│                    │ quay.io/frrouting/frr:10.5.1   │           │ 3fff:172:20:20::4 │
+├────────────────────┼────────────────────────────────┼───────────┼───────────────────┤
+│ clab-rede-pcm      │ linux                          │ running   │ 172.20.20.12      │
+│                    │ wbitt/network-multitool:3.22.2 │ (healthy) │ 3fff:172:20:20::c │
+╰────────────────────┴────────────────────────────────┴───────────┴───────────────────╯
+
+===== Vizinhança OSPF: matriz =====
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+100.64.255.1      1 Full/-          15m49s            30.173s 100.64.1.2      eth1:100.64.1.1                      0     0     0
+100.64.255.2      1 Full/-          15m44s            30.160s 100.64.2.2      eth2:100.64.2.1                      0     0     0
+
+
+===== Vizinhança OSPF: loja1 =====
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+100.64.255.2      1 Full/-          15m49s            37.606s 100.64.2.6      eth2:100.64.2.5                      0     0     0
+100.64.255.1      1 Full/-          5m59s             30.729s 100.64.1.6      eth1:100.64.1.5                      0     0     0
+
+
+===== Vizinhança OSPF: loja2 =====
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+100.64.255.1      1 Full/-          15m51s            38.511s 100.64.1.10     eth1:100.64.1.9                      0     0     0
+100.64.255.2      1 Full/-          15m50s            38.508s 100.64.2.10     eth2:100.64.2.9                      0     0     0
+
+
+===== Vizinhança OSPF: nuvem =====
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+100.64.255.1      1 Full/-          15m54s            36.781s 100.64.1.14     eth1:100.64.1.13                     0     0     0
+100.64.255.2      1 Full/-          15m53s            37.448s 100.64.2.14     eth2:100.64.2.13                     0     0     0
+
+
+===== Conectividade caixa 1 -> ERP (ICMP) =====
+PING 10.20.2.10 (10.20.2.10) 56(84) bytes of data.
+64 bytes from 10.20.2.10: icmp_seq=1 ttl=61 time=0.109 ms
+64 bytes from 10.20.2.10: icmp_seq=2 ttl=61 time=0.071 ms
+64 bytes from 10.20.2.10: icmp_seq=3 ttl=61 time=0.071 ms
+
+--- 10.20.2.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2028ms
+rtt min/avg/max/mdev = 0.071/0.083/0.109/0.017 ms
+
+===== Conectividade caixa 2 -> ERP (ICMP) =====
+PING 10.20.2.10 (10.20.2.10) 56(84) bytes of data.
+64 bytes from 10.20.2.10: icmp_seq=1 ttl=61 time=0.119 ms
+64 bytes from 10.20.2.10: icmp_seq=2 ttl=61 time=0.067 ms
+64 bytes from 10.20.2.10: icmp_seq=3 ttl=61 time=0.084 ms
+
+--- 10.20.2.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2053ms
+rtt min/avg/max/mdev = 0.067/0.090/0.119/0.021 ms
+
+===== Traceroute loja1 -> ERP (antes da falha) =====
+traceroute to 10.20.2.10 (10.20.2.10), 10 hops max, 46 byte packets
+ 1  10.20.5.129  0.009 ms  0.005 ms  0.006 ms
+ 2  100.64.1.6  0.006 ms  0.007 ms  0.006 ms
+ 3  100.64.1.1  0.006 ms  0.006 ms  0.007 ms
+ 4  10.20.2.10  0.005 ms  0.006 ms  0.006 ms
+
+===== Caixa1 -> ERP HTTPS (esperado funcionar) =====
+HTTP 200
+
+===== IoT -> ERP 8554 (esperado funcionar) =====
+HTTP 200
+
+===== Convidados -> site externo simulado (esperado funcionar) =====
+HTTP 200
+
+===== Aplicação privada -> site externo simulado (esperado funcionar) =====
+HTTP 200
+
+===== Regras firewall loja1 =====
+table inet loja {
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+		ct state established,related accept
+		iifname "eth4" ip daddr 10.20.0.0/16 drop
+		iifname "eth3" ip daddr 10.20.2.0/25 tcp dport 443 accept
+		iifname "eth3" ip daddr 10.20.2.0/25 ip protocol icmp icmp type echo-request accept
+		iifname "eth5" ip daddr 10.20.2.0/25 tcp dport 8554 accept
+		iifname "eth4" oifname "eth2" ip daddr != 10.20.0.0/16 accept
+	}
+
+	chain postrouting {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "eth2" ip saddr 10.20.4.0/24 ip daddr != 10.20.0.0/16 masquerade
+	}
+}
+
+===== Regras firewall nuvem =====
+table inet nuvem {
+	chain forward {
+		type filter hook forward priority filter; policy accept;
+		ct state established,related accept
+		iifname "eth2" ip saddr != 10.20.0.0/16 ip daddr 10.20.8.0/24 drop
+	}
+
+	chain postrouting {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "eth2" ip saddr 10.20.8.0/24 ip daddr != 10.20.0.0/16 masquerade
+	}
+}
+
+===== Rota preferida no roteador loja1 =====
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+Routing entry for 10.20.2.0/25
+  Known via "ospf", distance 110, metric 30, best
+  Last update 00:06:04 ago
+  Flags: Selected 
+  Status: Installed 
+  * 100.64.1.6, via eth1, weight 1
+
+
+===== Teste de bloqueio (resultado esperado: conexão bloqueada) =====
+curl: (28) Connection timed out after 4002 milliseconds
+OK: convidados não alcançaram HTTPS do ERP
+
+===== Simulação de queda do MPLS da Loja 1 =====
+
+===== ERP via enlace reserva =====
+PING 10.20.2.10 (10.20.2.10) 56(84) bytes of data.
+64 bytes from 10.20.2.10: icmp_seq=1 ttl=61 time=0.115 ms
+64 bytes from 10.20.2.10: icmp_seq=2 ttl=61 time=0.065 ms
+64 bytes from 10.20.2.10: icmp_seq=3 ttl=61 time=0.070 ms
+
+--- 10.20.2.10 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2087ms
+rtt min/avg/max/mdev = 0.065/0.083/0.115/0.022 ms
+
+===== Traceroute pela reserva =====
+traceroute to 10.20.2.10 (10.20.2.10), 10 hops max, 46 byte packets
+ 1  10.20.5.129  0.008 ms  0.006 ms  0.006 ms
+ 2  100.64.2.6  0.005 ms  0.032 ms  0.006 ms
+ 3  100.64.2.1  0.006 ms  0.006 ms  0.006 ms
+ 4  10.20.2.10  0.005 ms  0.070 ms  0.005 ms
+
+Término: 2026-10-22T23:52:25+00:00 | Falhas reportadas: 0
+Os comandos executados foram registrados em evidencias/execucao-completa.txt.
