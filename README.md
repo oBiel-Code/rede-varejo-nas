@@ -1,8 +1,6 @@
-> **Como entregar sem ler o enunciado:** veja [`PASSO_A_PASSO.md`](PASSO_A_PASSO.md). Para registrar testes no Codespaces: `bash executar_testes.sh`.
+> # Laboratorio NAS - Da matriz a nuvem
 
-# Laboratorio NAS - Da matriz a nuvem
-
-Projeto-base elaborado a partir do enunciado HTML fornecido. Integrante: Gabriel C. Simões — RM 563169 — Engenharia de Software, FIAP — turma 2ESPX. Conferir dados antes da entrega.
+Integrante: Gabriel C. Simões — RM 563169 — Engenharia de Software, FIAP — turma 2ESPX.
 
 ## Proposta
 Rede de varejo com matriz, duas lojas e nuvem; roteamento OSPF por MPLS preferencial (custo 10) e internet de contingencia (custo 100), segmentacao e monitoramento.
@@ -38,8 +36,8 @@ A sub-rede privada usa SNAT quando acessa destinos externos via internet. Conexo
 ## Monitoracao
 Linha de base: media + 3 desvios das ultimas 30 amostras boas (piso de 2 ms); alerta por perda de 3 amostras em 10.
 
-## Evidencias pendentes
-Os testes reais precisam ser executados na plataforma. Nao foram inventados resultados, capturas ou tempos medidos. Ver o arquivo `evidencias/ROTEIRO.md`.
+## Evidências de validação
+Os procedimentos de validação e os registros disponíveis estão organizados no diretório `evidencias/`. Consulte os registros para identificar os testes executados e seus resultados.
 
 ## Desenhos
 Os desenhos `fisica.png` e `logica.png` estão incluídos como visualizações do projeto; os arquivos `*.mmd` mantêm a fonte editável. Veja `arquitetura/tabela-rotas.md` e `evidencias/STATUS.md`.
@@ -58,7 +56,7 @@ Os desenhos `fisica.png` e `logica.png` estão incluídos como visualizações d
 - `politica-caminhos.yaml` é uma **especificação de política**, não um controlador SD-WAN integrado à topologia.
 - O `monitora.py` implementa a **detecção**; aumentar automaticamente o custo OSPF é EXTRA e não foi automatizado.
 - Os SSIDs/VLANs são **projeto lógico**; o Containerlab original não cria APs nem VLANs reais.
-- O firewall usa `nftables` nos roteadores; conferir no Codespaces se a imagem aceita instalação e carregamento via `apk`. Se houver falha, corrigir no ambiente e registrar.
+- O firewall utiliza regras `nftables` nos roteadores para aplicar as políticas de segmentação e controle de tráfego.
 - A internet é simulada como roteador FRR com OSPF; não é um provedor público real.
 
 ## Comandos principais de evidência

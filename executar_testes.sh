@@ -25,7 +25,11 @@ if ! command -v docker >/dev/null || ! command -v containerlab >/dev/null; then
   exit 1
 fi
 rodar 'Docker' docker info
-rodar 'Implantação Containerlab' bash -c 'cd rede && sudo containerlab deploy -t rede.clab.yml'
+if docker ps --format '{{.Names}}' | grep -q '^clab-rede-matriz$'; then
+    echo 'OK: topologia já implantada; reutilizando containers existentes'
+else
+    rodar 'Implantação Containerlab' bash -c 'cd rede && sudo containerlab deploy -t rede.clab.yml'
+fi
 rodar '14 nós da topologia' bash -c 'cd rede && sudo containerlab inspect -t rede.clab.yml'
 for r in matriz loja1 loja2 nuvem; do
   rodar "Vizinhança OSPF: $r" docker exec "clab-rede-$r" vtysh -c 'show ip ospf neighbor'
